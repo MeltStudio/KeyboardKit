@@ -48,6 +48,8 @@ private extension KeyboardInputViewController {
     }
     
     func addRepeatingGesture(to button: KeyboardButton) {
+        let action =  button.action
+        guard  action == .backspace else { return }
         let gesture = RepeatingGestureRecognizer { [weak self] in
             self?.handle(.repeatPress, on: button)
         }
