@@ -88,6 +88,7 @@ private extension KeyboardAction {
     
     func buttonText(for category: EmojiCategory) -> String {
         switch category {
+        case .suggestions: return "🍆"
         case .frequents: return "🕓"
         case .smileys: return "😀"
         case .animals: return "🐻"

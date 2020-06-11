@@ -16,6 +16,7 @@ public enum EmojiCategory: Equatable, CaseIterable {
 
     case
     frequents,
+    suggestions,
     smileys,
     animals,
     foods,
@@ -40,6 +41,7 @@ public extension EmojiCategory {
     var emojis: [String] {
         switch self {
         case .frequents: return frequents
+        case .suggestions: return suggestions
         case .smileys: return smileys
         case .animals: return animals
         case .foods: return foods
@@ -67,6 +69,9 @@ private extension EmojiCategory {
     var frequents: [String] {
         guard let actions: [String] = EmojiCategory.userDefaults.array(forKey: EmojiCategory.keyFR) as? [String] else { return "😂❤️😍😒👌☺️😊😘😭😩💕😔😏😁😳👍✌️😉😌💁‍♀️🙈😎🎶👀😑😴😄😜😋👏".toArray() }
         return actions
+    }
+    var suggestions: [String] {
+        "😂❤️😍😒👌☺️😊😘😭😩💕😔😏😁😳".toArray()
     }
     
     var activities: [String] { "⚽️🏀🏈⚾️🎾🏐🏉🎱🏓🏸🥅🏒🏑🏏⛳️🏹🎣🥊🥋🎽⛸🥌🛷🎿⛷🏂🏋️‍♀️🏋️‍♂️🤼‍♀️🤼‍♂️🤸‍♀️🤸‍♂️⛹️‍♀️⛹️‍♂️🤺🤾‍♀️🤾‍♂️🏌️‍♀️🏌️‍♂️🏇🧘‍♀️🧘‍♂️🏄‍♀️🏄‍♂️🏊‍♀️🏊‍♂️🤽‍♀️🤽‍♂️🚣‍♀️🚣‍♂️🧗‍♀️🧗‍♂️🚵‍♀️🚵‍♂️🚴‍♀️🚴‍♂️🏆🥇🥈🥉🏅🎖🏵🎗🎫🎟🎪🤹‍♀️🤹‍♂️🎭🎨🎬🎤🎧🎼🎹🥁🎷🎺🎸🎻🎲🎯🎳🎮🎰".toArray() }
